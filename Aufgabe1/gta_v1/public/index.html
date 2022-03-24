@@ -37,14 +37,16 @@
               type="text"
               name="latitude"
               id="latitude"
-              placeholder="49.01379"
+              value="49.01379"
+              disabled
             />
             <label for="longitude">Longitude:</label>
             <input
               type="text"
               name="longitude"
               id="longitude"
-              placeholder="8.390071"
+              value="8.390071"
+              disabled
             />
             <label for="name">Name:</label>
             <input
@@ -52,6 +54,8 @@
               name="name"
               id="name"
               placeholder="e.g. Central Berlin"
+              required
+              maxlength="10"
             />
             <label for="hashtag">Hashtag:</label>
             <input
@@ -59,6 +63,9 @@
               name="hashtag"
               id="hashtag"
               placeholder="e.g. #ber"
+              required
+              pattern="^#"
+              maxlength="11"
             />
           </fieldset>
 
@@ -77,14 +84,17 @@
           action="/discovery"
           method="post"
         >
-        
-        <fieldset>
-          <legend>Search</legend>
-          <label for="search">Search term or keywords:</label>
-          <input type="search" name="search" id="search" placeholder="e.g. Berlin">
-          <button type="submit">Search</button>
-        </fieldset>
-
+          <fieldset>
+            <legend>Search</legend>
+            <label for="search">Search term or keywords:</label>
+            <input
+              type="search"
+              name="search"
+              id="search"
+              placeholder="e.g. Berlin"
+            />
+            <button type="submit">Search</button>
+          </fieldset>
         </form>
         <!-- ############### VS1Lab 1a Form 2 End -->
 
