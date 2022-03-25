@@ -125,11 +125,18 @@ main {
 
 /* ### TODO ### Styles for Tagging component */
 
-#tag-form {
+input {
   display: block;
 }
 
 /* ### TODO ### Styles for Discovery component */
+.discovery__wrapper {
+  display: flex;
+}
+
+img {
+  display: block;
+}
 
 /* ... your code here ... */
 
@@ -144,6 +151,7 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
 /* ... your code here ... */
 
 /* ### TODO ### Media Queries */
