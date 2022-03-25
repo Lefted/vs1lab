@@ -121,17 +121,43 @@ header {
 main {
   padding: 4em;
   display: flex;
+  gap: 2em;
+}
+
+label {
+  color:#666;
 }
 
 /* ### TODO ### Styles for Tagging component */
 
 input {
   display: block;
+  padding-left: 1em;
+  margin-bottom: 1em;
+  margin-top: 0.6em;
+  height: 3em;
+  width: 14em;
+}
+
+button {
+  height: 3em;
+  width: 14em;
+  border:1px solid rgb(170, 170, 170);
+}
+
+fieldset {
+  margin-top: 1em;
+  padding: 1em;
+  border:1px solid rgb(170, 170, 170);
 }
 
 /* ### TODO ### Styles for Discovery component */
+
+
 .discovery__wrapper {
+  padding-top: 2em;
   display: flex;
+  gap: 2em;
 }
 
 img {
