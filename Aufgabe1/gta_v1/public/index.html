@@ -25,7 +25,7 @@
     </header>
 
     <main class="main">
-      <section class="main__tagging tagging col-4">
+      <section class="main__tagging tagging col-3">
         <h2>Tagging</h2>
 
         <!-- ############### VS1Lab 1a Form 1 Start -->
@@ -33,7 +33,7 @@
           <fieldset>
             <legend>Add a new GeoTag</legend>
             <label for="latitude">Latitude:</label>
-            <input
+            <input class="locked__input"
               type="text"
               name="latitude"
               id="latitude"
@@ -41,7 +41,7 @@
               disabled
             />
             <label for="longitude">Longitude:</label>
-            <input
+            <input class="locked__input"
               type="text"
               name="longitude"
               id="longitude"
@@ -73,7 +73,7 @@
         <!-- ############### VS1Lab 1a Form 1 End -->
       </section>
 
-      <section class="main__discovery discovery col-8">
+      <section class="main__discovery discovery col-9">
         <h2 class="discovery__title">Discovery</h2>
 
         <!-- ############### VS1Lab 1a Form 2 Start -->
@@ -100,8 +100,8 @@
         <div class="discovery__wrapper">
           <div class="discovery__taglist">
             <ul class="discovery__results" id="discoveryResults">
-              <li>Castle (49.01379, 8.404435) #sight</li>
-              <li>IWI (49.01379, 8.390071) #edu</li>
+              <li class="tags">Castle (49.01379, 8.404435) #sight</li>
+              <li class="tags">IWI (49.01379, 8.390071) #edu</li>
             </ul>
           </div>
 
