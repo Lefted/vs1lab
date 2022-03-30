@@ -117,6 +117,8 @@ header {
 
 /* ### TODO ### Styles for Main Component */
 main {
+  max-width: 1100px;
+  margin: auto;
   padding: 4em;
   display: flex;
   gap: 2em;
@@ -199,9 +201,35 @@ footer {
 
 /* ### TODO ### Media Queries */
 @media only screen and (max-width: 1100px) {
-	body{
-		flex-direction: column;
-	}
+  main {
+    flex-direction: column;
+    max-width: 550px;
+    margin: auto;
+  }
+  .discovery__wrapper {
+    flex-direction: column;
+  }
+  .main__discovery {
+    width: 100%;
+  }
+  .main__tagging {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  main {
+    padding: 1em;
+  }
+  .header__title {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .header__image {
+    display: none;
+  }
 }
 
 /* ... your code here ... */
