@@ -105,10 +105,8 @@ a {
 
 /* ### TODO ### Styles for Header Component */
 header {
-  display: flex;
   background-color: #efefef;
   border-bottom: 1px solid #cdcdcd;
-  justify-content: space-between;
   padding: 4em;
 }
 
@@ -125,7 +123,7 @@ main {
 }
 
 label {
-  color:#666;
+  color: #666;
 }
 
 /* ### TODO ### Styles for Tagging component */
@@ -142,7 +140,7 @@ input {
 .locked__input {
   background-color: rgb(245, 245, 245);
   color: rgb(66, 66, 66);
-  border:1px solid rgb(207, 207, 207);
+  border: 1px solid rgb(207, 207, 207);
   border-radius: 3px;
 }
 
@@ -151,7 +149,7 @@ input {
   list-style: none;
   width: 15em;
   padding: 1em;
-  border:1px solid rgb(206, 206, 206);
+  border: 1px solid rgb(206, 206, 206);
   background-color: rgb(240, 240, 240);
   color: var(--link-color);
   font-weight: bold;
@@ -160,17 +158,16 @@ input {
 button {
   height: 3em;
   width: 14em;
-  border:1px solid rgb(170, 170, 170);
+  border: 1px solid rgb(170, 170, 170);
 }
 
 fieldset {
   margin-top: 1em;
   padding: 1em;
-  border:1px solid rgb(170, 170, 170);
+  border: 1px solid rgb(170, 170, 170);
 }
 
 /* ### TODO ### Styles for Discovery component */
-
 
 .discovery__wrapper {
   padding-top: 2em;
@@ -194,12 +191,17 @@ footer {
   padding: 3em;
   /*position: fixed;*/
   left: 0;
-/*  bottom: 0;*/
+  /*  bottom: 0;*/
   width: 100%;
 }
 
 /* ... your code here ... */
 
 /* ### TODO ### Media Queries */
+@media only screen and (max-width: 1100px) {
+	body{
+		flex-direction: column;
+	}
+}
 
 /* ... your code here ... */

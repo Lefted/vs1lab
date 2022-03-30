@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <header class="header">
+    <header class="header row">
       <img
         src="./images/location.png"
         class="header__image"
@@ -33,7 +33,8 @@
           <fieldset>
             <legend>Add a new GeoTag</legend>
             <label for="latitude">Latitude:</label>
-            <input class="locked__input"
+            <input
+              class="locked__input"
               type="text"
               name="latitude"
               id="latitude"
@@ -41,7 +42,8 @@
               disabled
             />
             <label for="longitude">Longitude:</label>
-            <input class="locked__input"
+            <input
+              class="locked__input"
               type="text"
               name="longitude"
               id="longitude"
@@ -64,7 +66,7 @@
               id="hashtag"
               placeholder="e.g. #ber"
               required
-              pattern="^#"
+              pattern="^#[^#]+"
               maxlength="11"
             />
             <button type="submit">Add Tag</button>
@@ -92,6 +94,8 @@
               id="search"
               placeholder="e.g. Berlin"
             />
+            <input name="latitude" type="hidden" id="latitudeDiscovery" />
+            <input name="longitude" type="hidden" id="longitudeDiscovery" />
             <button type="submit">Search</button>
           </fieldset>
         </form>
