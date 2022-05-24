@@ -70,6 +70,8 @@ router.post("/tagging", function (req, res) {
   geoTagStore.addGeoTag(geotag);
   res.render("index", {
     taglist: geoTagStore.getNearbyGeoTags(longitude, latitude, radius),
+    latitude: latitude,
+    longitude: longitude,
   });
 });
 
@@ -96,11 +98,13 @@ router.post("/discovery", function (req, res) {
   const searchTerm = req.body.searchTerm;
 
   const foundTags =
-    searchTerm != null && searchTerm.isBlank() //
+    searchTerm !== null && !searchTerm.isBlank() //
       ? geoTagStore.searchNearbyGeoTags(longitude, latitude, radius, searchTerm) //
       : geoTagStore.getNearbyGeoTags(longitude, latitude, radius);
   res.render("index", {
     taglist: foundTags,
+    latitude: latitude,
+    longitude: longitude,
   });
 });
 
