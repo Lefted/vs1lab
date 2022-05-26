@@ -42,7 +42,11 @@ const geoTagStore = new GeoTagStore();
 
 // TODO: extend the following route example if necessary
 router.get("/", (req, res) => {
-  res.render("index", { taglist: [] });
+  res.render("index", {
+    taglist: [],
+    latitude: undefined,
+    longitude: undefined,
+  });
 });
 
 /**
@@ -98,7 +102,7 @@ router.post("/discovery", function (req, res) {
   const searchTerm = req.body.searchTerm;
 
   const foundTags =
-    searchTerm !== null && !searchTerm.isBlank() //
+    searchTerm !== undefined && !searchTerm.isBlank() //
       ? geoTagStore.searchNearbyGeoTags(longitude, latitude, radius, searchTerm) //
       : geoTagStore.getNearbyGeoTags(longitude, latitude, radius);
   res.render("index", {
