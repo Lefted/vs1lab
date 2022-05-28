@@ -40,7 +40,6 @@ const geoTagStore = new GeoTagStore();
  * As response, the ejs-template is rendered without geotag objects.
  */
 
-// TODO: extend the following route example if necessary
 router.get("/", (req, res) => {
   res.render("index", {
     taglist: [],
@@ -70,10 +69,12 @@ router.post("/tagging", function (req, res) {
   const radius = 10;
   const name = req.body.name;
   const hashtag = req.body.hashtag;
-  const geotag = new GeoTag(latitude, longitude, name, hashtag);
+  const geotag = new GeoTag(name, latitude, longitude, hashtag);
   geoTagStore.addGeoTag(geotag);
+
+  const foundTags = geoTagStore.getNearbyGeoTags(longitude, latitude, radius);
   res.render("index", {
-    taglist: geoTagStore.getNearbyGeoTags(longitude, latitude, radius),
+    taglist: foundTags,
     latitude: latitude,
     longitude: longitude,
   });

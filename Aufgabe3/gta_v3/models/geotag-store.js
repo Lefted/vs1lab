@@ -46,6 +46,7 @@ class InMemoryGeoTagStore {
   getNearbyGeoTags(longitude, latitude, radius) {
     return this._geoTags.filter((geoTag) => {
       const distance = geoTag.getDistanceTo(longitude, latitude);
+      console.log(`${geoTag.name} is ${distance}km away.`);
       return distance <= radius;
     });
   }

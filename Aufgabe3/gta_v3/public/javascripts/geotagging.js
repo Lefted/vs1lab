@@ -19,6 +19,9 @@ function updateLocation() {
   const latitudeDiscoveryInput = document.getElementById("latitudeDiscovery");
   const longitudeDiscoveryInput = document.getElementById("longitudeDiscovery");
 
+  const mapViewImg = document.getElementById("mapView");
+  const taglistJSON = mapViewImg?.getAttribute("data-tags");
+  const taglist = JSON.parse(taglistJSON);
   const mapManager = new MapManager("mcn0x3RJP1bDTLFbHvPWRRmlu0FFltLr");
   if (
     latitudeInput.value &&
@@ -26,10 +29,10 @@ function updateLocation() {
     latitudeInput.value &&
     longitudeDiscoveryInput.value
   ) {
-    console.log("Skipping location retrieval.");
     const mapQuestUrl = mapManager.getMapUrl(
       latitudeInput.value,
-      longitudeInput.value
+      longitudeInput.value,
+      taglist
     );
     document.getElementById("mapView").src = mapQuestUrl;
     return;
@@ -41,7 +44,7 @@ function updateLocation() {
     latitudeDiscoveryInput.value = latitude;
     longitudeDiscoveryInput.value = longitude;
 
-    const mapQuestUrl = mapManager.getMapUrl(latitude, longitude);
+    const mapQuestUrl = mapManager.getMapUrl(latitude, longitude, taglist);
     document.getElementById("mapView").src = mapQuestUrl;
   });
 }
