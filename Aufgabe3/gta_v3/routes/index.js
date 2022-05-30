@@ -103,7 +103,7 @@ router.post("/discovery", function (req, res) {
   const searchTerm = req.body.searchTerm;
 
   const foundTags =
-    searchTerm !== undefined && !searchTerm.isBlank() //
+    searchTerm !== undefined //
       ? geoTagStore.searchNearbyGeoTags(longitude, latitude, radius, searchTerm) //
       : geoTagStore.getNearbyGeoTags(longitude, latitude, radius);
   res.render("index", {

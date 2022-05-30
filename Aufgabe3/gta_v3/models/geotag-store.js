@@ -40,22 +40,19 @@ class InMemoryGeoTagStore {
   }
 
   removeGeoTag(name) {
-    this._geoTags = this._geoTags.filter((geoTag) => geoTag.getName() !== name);
+    this._geoTags = this._geoTags.filter((geoTag) => geoTag.name !== name);
   }
 
   getNearbyGeoTags(longitude, latitude, radius) {
     return this._geoTags.filter((geoTag) => {
       const distance = geoTag.getDistanceTo(longitude, latitude);
-      console.log(`${geoTag.name} is ${distance}km away.`);
       return distance <= radius;
     });
   }
 
   searchNearbyGeoTags(longitude, latitude, radius, keyword) {
     return this.getNearbyGeoTags(longitude, latitude, radius).filter(
-      (geoTag) =>
-        geoTag.getName().includes(keyword) ||
-        geoTag.getHashtag().includes(keyword)
+      (geoTag) => geoTag.name.includes(keyword) || geoTag.name.includes(keyword)
     );
   }
 }

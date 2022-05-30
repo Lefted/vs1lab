@@ -51,7 +51,7 @@
         <fieldset>
           <legend>Search</legend>
           <label for="search">Search term or keywords:</label>
-          <input type="search" name="search" id="search" placeholder="e.g. Berlin" />
+          <input name="searchTerm" type="search" name="search" id="search" placeholder="e.g. Berlin" />
           <input name="latitude" type="hidden" id="latitudeDiscovery" <% if(latitude) { %> value=<%= latitude %> <% } %> />
           <input name="longitude" type="hidden" id="longitudeDiscovery" <% if (longitude) { %> value=<%= longitude %> <% } %> />
           <button type="submit">Search</button>
